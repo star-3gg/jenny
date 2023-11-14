@@ -5,8 +5,25 @@ project("JennyStatsGen" VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+###
+# Qt 
+###
 # Ensure the QT5 package is installed
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+# Tell CMake to run uic when necessary
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOUIC_SEARCH_PATHS src/gui/qt-ui-components)
+
+# Include the directory where the generated UI header files are located
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/JennyStatsGen_autogen/include)
+
+# If you have .cpp and .h files under src/gui/qt-ui-components
+file(GLOB GUI_SOURCES "src/gui/qt-ui-components/*.cpp" "src/gui/qt-ui-components/*.h")
+
+# If you're using .ui files
+file(GLOB UI_FILES "src/gui/qt-ui-components/*.ui")
+
 
 # Include directories for header files
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -69,6 +86,9 @@ if(ENABLE_TSAN)
     set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=thread")
 endif()
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+###
+# Executable
+###
+add_executable(${PROJECT_NAME} ${SOURCES} ${GUI_SOURCES} ${UI_FILES})
 
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)

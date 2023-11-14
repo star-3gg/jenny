@@ -47,4 +47,4 @@ services:
     working_dir: /doxy
     volumes:
       - ./:/doxy
-    command: ["./generate_docs.sh"]
+    command: bash -c "./generate_docs.sh"
