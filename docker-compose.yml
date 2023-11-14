@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  ###
+  # Build Features:
+  # - CMake build system
+  # - Multi-faceted automated code analysis (dynamic & static) including:
+  #   - cppcheck
+  #   - clang-tidy
+  #   - ASan, UBSan, TSan
+  ###
+  ca-build:
+    build: 
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.ca-build
+      args:
+        NEW_UID: 1000
+        NEW_GID: 1000
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "./run_checks_and_build.sh"
+  ###
+  # cppcheck static code analysis command. 
+  # WARNING cppcheck is already run inside the build service. 
+  # This definition is intended for separation of concern durning CI/CD.
+  # Uncomment to excplicitly run.
+  # Usage: `docker-compose run cppcheck`
+  ###
+  # ca-cppcheck:
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfiles/Dockerfile.ca-build
+  #   volumes:
+  #     - ./src:/app/src
+  #     - ./include:/app/src
+  #   command: ["--enable=warning,performance,portability", "--std=c++17", "--verbose", "--error-exitcode=1", "--language=c++", "/app/src", "/app/include"]
+   

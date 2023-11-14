@@ -1,0 +1,33 @@
+# Use a base image with necessary tools installed
+FROM archlinux:latest
+
+# Set arguments for UID and GID
+ARG NEW_UID=1000
+ARG NEW_GID=1000
+
+# Install necessary packages
+RUN pacman -Sy --noconfirm \
+    base-devel \
+    cmake \
+    clang \
+    clang-tools-extra \
+    cppcheck \
+    qt5-base
+
+# Create a new user and group with the specified UID and GID
+RUN groupadd -g ${NEW_GID} appuser && \
+    useradd -m -u ${NEW_UID} -g ${NEW_GID} appuser
+
+# Set working directory
+WORKDIR /app
+
+# Change ownership of the /app directory
+RUN chown -R appuser:appuser /app
+
+# Switch to the new user
+USER appuser
+
+# Set environment variables for clang and clang-tidy
+ENV CC=/usr/bin/clang
+ENV CXX=/usr/bin/clang++
+ENV CLANG_TIDY=/usr/bin/clang-tidy

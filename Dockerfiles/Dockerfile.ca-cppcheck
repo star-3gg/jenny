@@ -1,0 +1,9 @@
+FROM archlinux:latest
+
+RUN pacman -Sy --noconfirm cppcheck
+
+WORKDIR /app
+VOLUME ["/app"]
+
+ENTRYPOINT ["cppcheck"]
+CMD ["--help"]
