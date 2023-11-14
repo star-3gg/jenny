@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "CoenraadS.bracket-pair-colorizer-2",
+        "cschlosser.doxdocgen",
+        "esbenp.prettier-vscode",
+        "Gruntfuggly.todo-tree",
+        "James-Yu.latex-workshop",
+        "justusadam.language-haskell",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake"
+    ]
+}
