@@ -11,6 +11,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Ensure the QT5 package is installed
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
+# For charts and basic plots
+find_package(Qt5 COMPONENTS Charts REQUIRED)
+
 # Tell CMake to run uic when necessary
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS src/gui/qt-ui-components)
@@ -23,7 +26,6 @@ file(GLOB GUI_SOURCES "src/gui/qt-ui-components/*.cpp" "src/gui/qt-ui-components
 
 # If you're using .ui files
 file(GLOB UI_FILES "src/gui/qt-ui-components/*.ui")
-
 
 # Include directories for header files
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -92,3 +94,4 @@ endif()
 add_executable(${PROJECT_NAME} ${SOURCES} ${GUI_SOURCES} ${UI_FILES})
 
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+target_link_libraries(${PROJECT_NAME} Qt5::Charts)
