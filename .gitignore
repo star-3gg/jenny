@@ -84,6 +84,7 @@ ui_*.h
 *.jsc
 Makefile*
 *build-*
+!Dockerfile.ca-build-archlinux
 *.qm
 *.prl
 
@@ -151,9 +152,6 @@ datasets/woocommerce/*
 export/diagrams/*
 export/reports/*
 src/__*
-
-# Virtual environments
-ssdt-venv
 
 # TODO log
 TODO.md

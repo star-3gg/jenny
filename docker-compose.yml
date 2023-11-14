@@ -18,7 +18,7 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: sh -c "./run_checks_and_build.sh"
+    command: sh -c "./scripts/run_checks_and_build.sh"
   ###
   # cppcheck static code analysis command. 
   # WARNING cppcheck is already run inside the build service. 
@@ -47,4 +47,4 @@ services:
     working_dir: /doxy
     volumes:
       - ./:/doxy
-    command: bash -c "./generate_docs.sh"
+    command: bash -c "./scripts/generate_docs.sh"

@@ -1,0 +1,3 @@
+#!/bin/bash
+# Forward all arguments to cmake inside the Docker container
+docker-compose run ca-build make "$@"

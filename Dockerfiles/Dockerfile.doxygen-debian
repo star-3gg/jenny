@@ -22,7 +22,7 @@ RUN mkdir /doxy && chown -R doxyuser:doxyuser /doxy
 USER doxyuser
 
 # Copy the generate_docs.sh script into the image
-COPY --chown=doxyuser:doxyuser generate_docs.sh /doxy/
+COPY --chown=doxyuser:doxyuser scripts/generate_docs.sh /doxy/
 
 # Set the working directory
 WORKDIR /doxy
@@ -31,4 +31,4 @@ WORKDIR /doxy
 RUN chmod +x /doxy/generate_docs.sh
 
 # By default, run generate_docs.sh
-CMD ["./generate_docs.sh"]
+CMD ["./scripts/generate_docs.sh"]
