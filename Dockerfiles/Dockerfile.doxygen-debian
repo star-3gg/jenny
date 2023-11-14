@@ -1,0 +1,34 @@
+# Use a base image that includes the necessary tools
+FROM debian:bullseye
+
+# Set arguments for UID and GID
+ARG NEW_UID=1000
+ARG NEW_GID=1000
+
+# Install Doxygen and other dependencies
+RUN apt-get update && apt-get install -y \
+    doxygen \
+    graphviz \
+    texlive-full
+
+# Create a new user and group with the specified UID and GID
+RUN groupadd -g ${NEW_GID} doxyuser && \
+    useradd -m -u ${NEW_UID} -g ${NEW_GID} doxyuser
+
+# Create the working directory and set ownership
+RUN mkdir /doxy && chown -R doxyuser:doxyuser /doxy
+
+# Switch to the new user
+USER doxyuser
+
+# Copy the generate_docs.sh script into the image
+COPY --chown=doxyuser:doxyuser generate_docs.sh /doxy/
+
+# Set the working directory
+WORKDIR /doxy
+
+# Make the script executable
+RUN chmod +x /doxy/generate_docs.sh
+
+# By default, run generate_docs.sh
+CMD ["./generate_docs.sh"]

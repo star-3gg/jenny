@@ -11,7 +11,7 @@ services:
   ca-build:
     build: 
       context: .
-      dockerfile: Dockerfiles/Dockerfile.ca-build
+      dockerfile: Dockerfiles/Dockerfile.ca-build-archlinux
       args:
         NEW_UID: 1000
         NEW_GID: 1000
@@ -29,9 +29,22 @@ services:
   # ca-cppcheck:
   #   build: 
   #     context: .
-  #     dockerfile: Dockerfiles/Dockerfile.ca-build
+  #     dockerfile: Dockerfiles/Dockerfile.ca-build-archlinux
   #   volumes:
   #     - ./src:/app/src
   #     - ./include:/app/src
   #   command: ["--enable=warning,performance,portability", "--std=c++17", "--verbose", "--error-exitcode=1", "--language=c++", "/app/src", "/app/include"]
-   
+  ###
+  # Doxygen service for automated documentation
+  ###
+  doxygen:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.doxygen-debian
+      args:
+        NEW_UID: 1000
+        NEW_GID: 1000
+    working_dir: /doxy
+    volumes:
+      - ./:/doxy
+    command: ["./generate_docs.sh"]
