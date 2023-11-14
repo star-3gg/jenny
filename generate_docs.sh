@@ -18,4 +18,4 @@ pdflatex refman.tex
 pdflatex refman.tex
 
 # If a documentation has been generated, copy it to the main directory
-if [ -f "refman.pdf" ]; then cp refman.pdf /doxy/documentation.pdf; fi
+if [ -f "refman.pdf" ]; then cp refman.pdf /doxy/docs/documentation.pdf; fi
