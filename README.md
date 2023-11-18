@@ -1,6 +1,10 @@
 # Jenny — Automated Statistics Generator and Prediction Engine
 A data science toolkit for marketing teams 📊💡
 
+<!-- START LOGO -->
+![logo](docs/images/logo/logo_mid.png)
+<!-- END LOGO -->
+
 # Introduction
 Welcome to Jenny, your go-to platform for automated statistics and predictive analytics. Designed for marketing teams, Jenny simplifies data science tasks, providing insights and forecasts to drive strategic decisions. 🚀
 
@@ -8,13 +12,15 @@ Welcome to Jenny, your go-to platform for automated statistics and predictive an
 Get Jenny up and running on your machine. Here's how to install it on different operating systems (currently, Linux support is experimental):
 
 ### Installation on Linux (experimental)
-[Instructions coming soon...]
+- For development simply run `docker-compose up` to build the project and proceed to run the binary in the build folder by executing `./build/<built-binary-name>`.
+
+- [Instructions coming soon...]
 
 ### Installation on MacOS (soon)
-[Instructions coming soon...]
+- [Instructions coming soon...]
 
 ### Installation on Windows10 (soon)
-[Instructions coming soon...]
+- [Instructions coming soon...]
 
 # Design & Concept
 Dive into the design and thought process behind Jenny. This section outlines the key concepts, architecture, and user experience design of the application.
@@ -22,17 +28,23 @@ Dive into the design and thought process behind Jenny. This section outlines the
 ## Mindmap
 Get a bird's eye view of the project's structure and its various components with our mindmap.
 
-![Mindmap](docs/uml/MMMindmapDiagram1.png)
+<!-- START MINDMAP -->
+![Mindmap](docs/uml/jpg/Mindmap1!MMMindmapDiagram1_1.jpg)
+<!-- END MINDMAP -->
 
 ## Use-Case Diagram
 Understand how users interact with Jenny and the different functionalities it offers through our use-case diagram.
 
-![Use-Case Diagram](docs/uml/UseCaseDiagram1.png)
+<!-- START USE-CASE DIAGRAM -->
+![Use-Case Diagram](docs/uml/jpg/Model1!UseCaseDiagram1_5.jpg)
+<!-- END USE-CASE DIAGRAM -->
 
 ## Wireframes
 Visualize the user interface and experience with our detailed wireframes, mapping out the look and feel of Jenny.
 
-![UI Wireframes](docs/uml/WFWireframeDiagram1.png)
+<!-- START UI WIREFRAMES -->
+![UI Wireframes](docs/uml/jpg/Wireframe1!WFWireframeDiagram1_6.jpg)
+<!-- END UI WIREFRAMES -->
 
 ## Deployment
 Jenny is a work in progress. Stay tuned for deployment instructions and more! 🏗️
