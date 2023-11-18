@@ -11,7 +11,8 @@ Welcome to Jenny, your go-to platform for automated statistics and predictive an
 
 ## Getting started
 Get Jenny up and running on your machine. Here's how to install it on different operating systems (currently, Linux support is experimental).
-If you need to familiarize yourself with our applications source-code, check out our [documentation](docs/documentation.pdf)
+If you need to familiarize yourself with our applications source-code, check out our [documentation](docs/documentation.pdf).
+If you're interested in collaborating, check this [project page](https://github.com/users/star-3gg/projects/1)
 
 ### Installation on Linux (experimental)
 - For development simply run `docker-compose up` to build the project and proceed to run the binary in the build folder by executing `./build/<built-binary-name>`.
