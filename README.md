@@ -1,9 +1,10 @@
-# Jenny — Automated Statistics Generator and Prediction Engine
-A data science toolkit for marketing teams 📊💡
+# Jenny — Automated Statistics Generator and Prediction Engine 📊
 
 <!-- START LOGO -->
 ![logo](docs/images/logo/logo_mid.png)
 <!-- END LOGO -->
+
+A data science toolkit for marketing teams.
 
 # Introduction
 Welcome to Jenny, your go-to platform for automated statistics and predictive analytics. Designed for marketing teams, Jenny simplifies data science tasks, providing insights and forecasts to drive strategic decisions. 🚀
